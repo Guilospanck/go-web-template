@@ -1,1 +1,1 @@
-# guest-bag-authentication
+# Go Web Template
