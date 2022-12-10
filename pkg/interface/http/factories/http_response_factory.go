@@ -1,8 +1,8 @@
 package factories
 
 import (
-	"guest-bag-authentication/pkg/application/errors"
-	httpserver "guest-bag-authentication/pkg/infrastructure/http_server"
+	"go-web-template/pkg/application/errors"
+	httpserver "go-web-template/pkg/infrastructure/http_server"
 	"net/http"
 )
 

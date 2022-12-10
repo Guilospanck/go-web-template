@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"guest-bag-authentication/cmd"
-	_ "guest-bag-authentication/pkg/infrastructure/environments"
+	"go-web-template/cmd"
+	_ "go-web-template/pkg/infrastructure/environments"
 	"log"
 )
 

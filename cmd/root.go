@@ -10,7 +10,7 @@ func Execute(ctx context.Context) error {
 	container.httpServer.Setup(ctx)
 
 	// register routes into http server interface
-	container.authenticationPresenter.Register(container.httpServer)
+	container.pingPresenter.Register(container.httpServer)
 
 	if err := container.httpServer.Run(); err != nil {
 		return err

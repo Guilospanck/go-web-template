@@ -3,8 +3,8 @@ package adapters
 import (
 	"bytes"
 	"fmt"
-	"guest-bag-authentication/pkg/application/interfaces"
-	httpserver "guest-bag-authentication/pkg/infrastructure/http_server"
+	"go-web-template/pkg/application/interfaces"
+	httpserver "go-web-template/pkg/infrastructure/http_server"
 	"io"
 	"net/http"
 

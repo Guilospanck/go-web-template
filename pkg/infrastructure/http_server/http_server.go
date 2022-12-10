@@ -3,7 +3,7 @@ package httpserver
 import (
 	"context"
 	"fmt"
-	"guest-bag-authentication/pkg/application/interfaces"
+	"go-web-template/pkg/application/interfaces"
 	"net/http"
 	"os"
 

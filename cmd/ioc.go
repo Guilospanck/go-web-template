@@ -6,15 +6,16 @@ package cmd
 
 import (
 	"context"
-	httpserver "guest-bag-authentication/pkg/infrastructure/http_server"
-	"guest-bag-authentication/pkg/infrastructure/logger"
-	"guest-bag-authentication/pkg/interface/http/handlers"
-	"guest-bag-authentication/pkg/interface/http/presenters"
+	usecases "go-web-template/pkg/application/usecases/ping"
+	httpserver "go-web-template/pkg/infrastructure/http_server"
+	"go-web-template/pkg/infrastructure/logger"
+	"go-web-template/pkg/interface/http/handlers"
+	"go-web-template/pkg/interface/http/presenters"
 )
 
 type Container struct {
-	httpServer              httpserver.IHTTPServer
-	authenticationPresenter presenters.IRoutes
+	httpServer    httpserver.IHTTPServer
+	pingPresenter presenters.IRoutes
 }
 
 func NewContainer(ctx context.Context) *Container {
@@ -23,13 +24,16 @@ func NewContainer(ctx context.Context) *Container {
 	// instantiate http server
 	httpServer := httpserver.NewHTTPServer(logger)
 
-	// Instantiate handlers (controllers) and presenters (routes) for the authentication workflow
-	authenticationHandler := handlers.NewAuthenticationHandler(logger)
-	authenticationPresenter := presenters.NewAuthenticationPresenter(logger, authenticationHandler)
+	// instantiate usecases
+	postPingUsecase := usecases.NewPostPingUsecase()
+
+	// Instantiate handlers (controllers) and presenters (routes) for the ping workflow
+	pingHandler := handlers.NewPingHandler(logger, postPingUsecase)
+	pingPresenter := presenters.NewPingPresenter(logger, pingHandler)
 
 	return &Container{
 		httpServer,
-		authenticationPresenter,
+		pingPresenter,
 	}
 
 }

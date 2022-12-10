@@ -1,4 +1,4 @@
-module guest-bag-authentication
+module go-web-template
 
 go 1.19
 
