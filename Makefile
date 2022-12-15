@@ -15,5 +15,10 @@ test-cov:
 run-local:
 	GO_ENV=development go run .      
 
-run-build:
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build --ldflags "-s -w" -o main main.go   
+build-linux:
+	rm -f main  
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build --ldflags "-s -w" -o main main.go
+
+build-darwin:
+	rm -f main  
+	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build --ldflags "-s -w" -o main main.go 
