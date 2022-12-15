@@ -8,6 +8,7 @@ It covers concepts of Clean Code, unit testing, GitHub actions and other practic
 - [Testify](https://github.com/stretchr/testify) for unit testings.
 
 ## Installation
+### Local
 Be sure to have [Go](https://go.dev/doc/install) installed. 
 
 Then, clone this repository:
@@ -18,6 +19,17 @@ cd go-web-template/
 And then install dependencies:
 ```bash
 go mod download
+```
+
+### Docker
+Build the image:
+```bash
+docker build -t guilospanck/go-web-template .
+```
+
+Run the container:
+```bash
+docker run -d -p 4444:4444 guilospanck/go-web-template
 ```
 
 ## How to use
